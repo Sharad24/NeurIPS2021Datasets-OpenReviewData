@@ -91,7 +91,7 @@ def read_meta(filename):
     return meta_list
 
 
-def crawl_meta(meta_hdf5=None, write_meta_name='data.hdf5', crawl_review=False):
+def crawl_meta(meta_hdf5=None, write_meta_name='data.hdf5', crawl_review=False, WRITE=False):
     
     if meta_hdf5 is None:
         # Crawl the meta data from OpenReview
@@ -99,9 +99,9 @@ def crawl_meta(meta_hdf5=None, write_meta_name='data.hdf5', crawl_review=False):
         from selenium import webdriver
         from selenium.webdriver.chrome.options import Options
         
-        from pyvirtualdisplay import Display
-        display = Display(visible=0, size=(800, 800))
-        display.start()
+        # from pyvirtualdisplay import Display
+        # display = Display(visible=0, size=(800, 800))
+        # display.start()
         
         import time
         executable_path = '/usr/local/bin/chromedriver'
@@ -218,7 +218,8 @@ def crawl_meta(meta_hdf5=None, write_meta_name='data.hdf5', crawl_review=False):
             ))
             
         # Save the crawled data
-        write_meta(meta_list, write_meta_name)
+        if WRITE:
+            write_meta(meta_list, write_meta_name)
     else:
         # Load the meta data from local
         meta_list = read_meta(meta_hdf5)
