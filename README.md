@@ -25,7 +25,9 @@ This Jupyter Notebook contains the data crawled from ICLR 2020 OpenReview webpag
 
 ### Decision
 
-This Jupyter Notebook contains the data and visualizations that are crawled ICLR 2020 OpenReview webpages. All the crawled data (sorted by the average ratings) can be found [here](#Data). The accepted papers have an average rating of 6.2431 and 3.4246 for rejected papers. The distribution is plotted as follows. 
+This Jupyter Notebook contains the data and visualizations that are crawled ICLR 2020 OpenReview webpages. 
+<!-- All the crawled data (sorted by the average ratings) can be found [here](#Data). The accepted papers have an average rating of 6.2431 and 3.4246 for rejected papers.  -->
+The distribution is plotted as follows. 
 
 <p align="center">
   <img src="asset/decision.png" width="800"/>
@@ -33,7 +35,7 @@ This Jupyter Notebook contains the data and visualizations that are crawled ICLR
 
 ### Rating distribution
 
-The distribution of reviewer ratings centers around 4 (mean: 4.1837).
+The distribution of reviewer ratings centers around 5 (mean: 5.4).
 
 <p align="center">
     <img src="asset/rating.png" width="1024"/>
@@ -56,7 +58,7 @@ def PR(rating_mean, your_rating):
     return pr, same_rating
 my_rating = (6+6+6)/3.  # your average rating here
 pr, same_rating = PR(rating_mean, my_rating)
-print('Your papar ({:.2f}) is among the top {:.2f}% of submissions based on the ratings.\n'
+print('Your paper ({:.2f}) is among the top {:.2f}% of submissions based on the ratings.\n'
       'There are {:.2f}% with the same rating.'.format(
           my_rating, 100-pr, same_rating))
 
@@ -68,7 +70,7 @@ print('Your papar ({:.2f}) is among the top {:.2f}% of submissions based on the 
 ```
 [Output]
 ```
-Your papar (6.00) is among the top 21.79% of submissions based on the ratings.
+Your paper (6.00) is among the top 21.79% of submissions based on the ratings.
 There are 8.24% with the same rating.
 ```
 
